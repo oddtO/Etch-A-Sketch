@@ -11,6 +11,10 @@
 body
 {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(51, 49, 49);
 }
 
 
@@ -26,7 +30,9 @@ body
     width: 80vmin;
     height: 80vmin;
 
-    background-color: black;
+    background-color: rgb(25, 175, 25);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 
@@ -34,7 +40,7 @@ body
 .main > div > div
 {
     flex: auto;
-    background-color: blueviolet;
+    background-color: white;
     border: var(--border-width) var(--border-style) var(--border-color);
     border-right: none;
     border-bottom: none;
@@ -58,5 +64,5 @@ body
     width: 100%;
     display: flex;
     flex: auto;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
