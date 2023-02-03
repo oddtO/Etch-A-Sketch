@@ -7,12 +7,24 @@
 }
 
 
+
+body
+{
+    height: 100vh;
+}
+
+
 .main
 {
+    --border-color: orange;
+    --border-style: solid;
+    --border-width: 3px;
+
+
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 80vh;
+    width: 80vmin;
+    height: 80vmin;
 
     background-color: black;
 }
@@ -23,8 +35,20 @@
 {
     flex: auto;
     background-color: blueviolet;
-    border: 3px solid orange;
+    border: var(--border-width) var(--border-style) var(--border-color);
     border-right: none;
+    border-bottom: none;
+}
+
+
+.main > div > div:last-child
+{
+    border-right: var(--border-width) var(--border-style) var(--border-color);
+}
+
+.main > div:last-child > div
+{
+    border-bottom: var(--border-width) var(--border-style) var(--border-color);
 }
 
 
@@ -35,5 +59,4 @@
     display: flex;
     flex: auto;
     background-color: aqua;
-    border-top: 3px solid black;
 }

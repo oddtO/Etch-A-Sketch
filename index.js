@@ -25,6 +25,6 @@
         }
     }
 
-    fillFlexibleGrid(2);
+    fillFlexibleGrid(20);
 
 })();
