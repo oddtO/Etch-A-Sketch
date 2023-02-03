@@ -19,7 +19,6 @@
         // let gridMain = document.querySelector('.main');
 
         let gridMain = new DocumentFragment();
-        gridMain.className = 'main';
 
 
         for(let i = 0; i < size; ++i)

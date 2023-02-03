@@ -12,11 +12,40 @@ body
 {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(51, 49, 49);
+
+    gap: 30px;
 }
 
+
+.resetter
+{
+    height: 60px;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.resetter:hover
+{
+    background-color: navy;
+    color: azure;
+    border: 1px solid azure;
+
+}
+
+.resetter:active
+{
+    transform: scale(1.1);
+}
 
 .main
 {
