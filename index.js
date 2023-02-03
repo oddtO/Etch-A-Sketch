@@ -1,17 +1,22 @@
 (function()
 {
-
+    const MAX_GRID_RESOLUTION = 100;
 
     let grid = createFlexibleGrid(100);
 
-
-
+    let resetButton = document.querySelector('.resetter');
     let sketchPad = document.querySelector('.main');
 
+    resetButton.addEventListener('click', resetGrid);
     sketchPad.addEventListener('pointerover', drawCellColor);
 
     sketchPad.append(grid);
+
+    return;
     
+
+
+
     function createFlexibleGrid(size = 16)
     {
         
@@ -30,6 +35,9 @@
 
         return gridMain;
 
+
+
+
         function addRow()
         {
             gridMain.append(document.createElement('div'));
@@ -40,6 +48,8 @@
             for(let i = 0; i < size; ++i)
                 gridMain.lastElementChild.append(document.createElement('div'));
         }
+
+
     }
 
 
@@ -53,7 +63,36 @@
     }
 
 
+    function resetGrid(event)
+    {
+        event.preventDefault();
+        let desiredGridSize = askValidSize();
 
+        let newGrid = createFlexibleGrid(desiredGridSize);
+
+        sketchPad.replaceChildren(newGrid);
+
+        return;
+
+
+
+        function askValidSize()
+        {
+            let desiredGridSize;
+            while (true) 
+            {
+                desiredGridSize = +prompt(`What grid resolution would you prefer? (Maximum ${MAX_GRID_RESOLUTION})`);
+    
+                if(Number.isInteger(desiredGridSize) && desiredGridSize > 0 && desiredGridSize <= MAX_GRID_RESOLUTION)
+                   break;
+    
+                alert(`Please, enter a valid number between 0-${MAX_GRID_RESOLUTION} inclusive`);
+            }
+
+            return desiredGridSize;
+        }
+
+    }
 
 
 
