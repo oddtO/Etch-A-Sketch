@@ -1,0 +1,39 @@
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+.main
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+
+    background-color: black;
+}
+
+
+/* cells */
+.main > div > div
+{
+    flex: auto;
+    background-color: blueviolet;
+    border: 3px solid orange;
+    border-right: none;
+}
+
+
+/* rows */
+.main > div
+{
+    width: 100%;
+    display: flex;
+    flex: auto;
+    background-color: aqua;
+    border-top: 3px solid black;
+}
