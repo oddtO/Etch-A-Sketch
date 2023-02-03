@@ -2,11 +2,15 @@
 {
 
 
-    let grid = createFlexibleGrid(10);
+    let grid = createFlexibleGrid(100);
 
-    grid.addEventListener('pointerover', drawCellColor);
 
-    document.body.append(grid);
+
+    let sketchPad = document.querySelector('.main');
+
+    sketchPad.addEventListener('pointerover', drawCellColor);
+
+    sketchPad.append(grid);
     
     function createFlexibleGrid(size = 16)
     {
@@ -14,7 +18,7 @@
 
         // let gridMain = document.querySelector('.main');
 
-        let gridMain = document.createElement('div');
+        let gridMain = new DocumentFragment();
         gridMain.className = 'main';
 
 

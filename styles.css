@@ -21,7 +21,7 @@ body
 .main
 {
     --border-color: orange;
-    --border-style: solid;
+    --border-style: none;
     --border-width: 3px;
 
 
