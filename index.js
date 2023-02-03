@@ -135,10 +135,6 @@
             return num * percent;
         }
 
-        function reduceByPercentage(num, percent)
-        {
-            return num - (num * percent);
-        }
 
         function setBackgroundColorInRGB(currentCell, r, g, b)
         {
@@ -159,18 +155,7 @@
 
         }
 
-        function isColorSetInRGB(colorString)
-        {
-            const COLOR_SET_IN_RGB_TESTER = /^rgb/;
-            return COLOR_SET_IN_RGB_TESTER.test(colorString);
-        }
-
-        function extractRGBColors(rgbString)
-        {
-            const RGB_VALUES_EXTRACTOR = /[\d]+/g;
-            let results = [...rgbString.matchAll(RGB_VALUES_EXTRACTOR)];
-            return [+results[0][0], +results[1][0], +results[2][0]];
-        }
+      
         
     }
 
