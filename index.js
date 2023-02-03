@@ -55,10 +55,48 @@
 
     function drawCellColor(event)
     {
-        if(event.target.children.length > 0)
+        let currentCell = event.target;
+        if(currentCell.children.length > 0)
             return;
 
-        event.target.style.backgroundColor = 'black';
+        
+
+
+        if(/* isColorSetInRGB(currentCell.style.backgroundColor) */true)
+        {
+
+            let [r, g, b] = getRandomRGBColor();
+            currentCell.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+        }
+        else
+        {
+
+        }
+
+        
+
+
+        function getRandomRGBColor()
+        {
+            const RGB_MIN = 0;
+            const RGB_MAX = 255;
+
+            return [getRandomNumberInRange(RGB_MIN, RGB_MAX), getRandomNumberInRange(RGB_MIN, RGB_MAX), getRandomNumberInRange(RGB_MIN, RGB_MAX)]; 
+        }
+
+        function isColorSetInRGB(colorString)
+        {
+            const COLOR_SET_IN_RGB_TESTER = /^rgb/;
+            return COLOR_SET_IN_RGB_TESTER.test(colorString);
+        }
+
+        function extractRGBColors(rgbString)
+        {
+            const RGB_VALUES_EXTRACTOR = /[\D]/g;
+            rgbString.replace(RGB_VALUES_EXTRACTOR, '').split(' ');
+
+        }
         
     }
 
@@ -92,6 +130,15 @@
             return desiredGridSize;
         }
 
+    }
+
+
+    function getRandomNumberInRange(min, max)
+    {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
 
